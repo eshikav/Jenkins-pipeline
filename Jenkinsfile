@@ -3,14 +3,14 @@ pipeline{
    stages{
        stage('Build'){
           steps{
-                 sh echo 'hello this is build task'
-                 sh echo `uname -r`
+                 echo 'hello this is build task'
+                 echo `uname -r`
                 }
        }
        stage('Test'){
           steps{
-                 sh echo 'hello this is test task'
-                 sh echo `uname -a`
+                 echo 'hello this is test task'
+                 echo `uname -a`
           }
                 }
     }

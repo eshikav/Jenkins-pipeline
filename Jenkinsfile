@@ -1,9 +1,9 @@
 pipeline{
    agent any;
    stages{
-       stage(Build){
+       stage('Build'){
                 }
-       stage(Test){
+       stage('Test'){
                 }
     }
 }

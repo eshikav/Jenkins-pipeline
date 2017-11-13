@@ -5,6 +5,7 @@ pipeline{
           steps{
                  echo 'hello this is build task'
                  sh 'uname -r'
+                 echo 'this is a polling build'
                 }
        }
        stage('Test'){

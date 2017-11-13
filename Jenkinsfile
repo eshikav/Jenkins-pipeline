@@ -11,6 +11,7 @@ pipeline{
           steps{
                  echo 'hello this is test task'
                  sh 'uname -a'
+                 sh 'pwd'
           }
                 }
     }

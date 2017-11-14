@@ -1,0 +1,12 @@
+- hosts: jenkins-agent
+  gather_facts: false
+  tasks:
+     - name: THis is a sample playbok for the execution
+       debug: msg="hi guys how is ur day"
+       tags:
+          - hi
+     
+     - name: THis is a sample playbok for the execution
+       debug: msg="bye guys hope u had a very nice day"
+       tags:
+          - bye

@@ -26,7 +26,7 @@ pipeline{
               readFile 'hi.txt'
               echo "${env.x}"
               echo "${env.y}"
-              stash name: "hi",allowEmpty: false,include: *.txt
+              stash name: "hi",allowEmpty: false,include: "*.txt"
                           }
            stage('Test'){
               dir('shiva'){

@@ -28,12 +28,12 @@ pipeline{
               echo "${env.y}"
               stash name: "hi",allowEmpty: false,include: "*.txt"
                           }
+        }
            stage('Test'){
               dir('shiva'){
                  unstash  name: 'hi'
               }
               }
-          }
        }
     }
 }

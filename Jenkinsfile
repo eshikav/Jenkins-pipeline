@@ -3,7 +3,7 @@ pipeline{
    stages{
        stage('Build'){ 
         when {
-        fileExists 'hi.txt'
+           expression{ fileExists 'hi.txt' }
         }
           environment {
       ARTIFACTORY_BUILD_LOGIN = credentials("shivs_creds")

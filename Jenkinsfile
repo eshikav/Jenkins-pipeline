@@ -30,6 +30,13 @@ pipeline{
                           }
         }
        }
+      stage('Deployment'){
+         steps{
+            dir('ansible'){
+               ansiblePlaybook playbook: "sample.yml",inventory: "hosts",colorized: true,tags: "hi"
+            }
+         }
+      }
   
            stage('Test'){
               steps{

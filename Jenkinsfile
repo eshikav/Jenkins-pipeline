@@ -1,7 +1,7 @@
 pipeline{
    agent { label 'Centos' }
    options { 
-      timestamps(),
+      timestamps()
 //      timeout(time: 30, unit: 'SECONDS')
    }
    stages{

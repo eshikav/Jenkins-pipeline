@@ -2,11 +2,7 @@ pipeline{
    agent { label 'Centos' }
    stages{
        stage('Build'){
-/*          
-        when {
-        fileExists 'hi.txt'
-        }
- */
+
           environment {
       ARTIFACTORY_BUILD_LOGIN = credentials("shivs_creds")
         }
@@ -21,3 +17,4 @@ pipeline{
           }
        }
     }
+}

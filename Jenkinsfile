@@ -5,9 +5,9 @@ pipeline{
           
           steps{
                  withCredentials([[$class: 'UsernamePasswordMultiBinding',credentialsId: 'shivs_creds',usernameVariable: 'USERNAME',passwordVariable: 'PASSWORD']]){
-                 echo $USERNAME
-                 sh 'uname -r'
-                 echo 'this is a polling build'
+                    echo ${env.USERNAME}
+                    sh 'uname -r'
+                    echo 'this is a polling build'
                 }
           }
        }

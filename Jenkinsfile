@@ -22,7 +22,7 @@ pipeline{
                     sh 'uname -r'
                     echo 'this is a polling build'
                     sh 'pwd'
-              sleep time:30 units: SECONDS
+              sleep time:30,units: SECONDS
 
               echo "${env.x}"
               echo "${env.y}"

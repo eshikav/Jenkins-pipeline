@@ -10,7 +10,9 @@ pipeline{
         }
         steps{
            dir('shiva'){
+              steps{
               deleteDir
+              }
            }
                  withCredentials([[$class: 'UsernamePasswordMultiBinding',credentialsId: 'shivs_creds',usernameVariable: 'USERNAME',passwordVariable: 'PASSWORD'],[$class: 'FileBinding',credentialsId: 'Jenkins-file',variable: 'JENKINSFILE']]){
                     sh 'env'

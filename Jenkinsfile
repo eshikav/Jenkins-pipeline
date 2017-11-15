@@ -23,6 +23,7 @@ pipeline{
                     echo 'this is a polling build'
                     sh 'pwd'
               sleep time:30,unit: 'SECONDS'
+              readFile 'hi.txt'
 
               echo "${env.x}"
               echo "${env.y}"

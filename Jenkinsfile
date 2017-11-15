@@ -2,7 +2,8 @@ pipeline{
    agent { label 'Centos' }
    stages{
        stage('Build'){
-          if ( fileExists('hi.txt') )
+          when {
+             fileExists('hi.txt')
           {
                 environment {
       ARTIFACTORY_BUILD_LOGIN = credentials("shivs_creds")

@@ -2,14 +2,13 @@ pipeline{
    agent { label 'Centos' }
    stages{
        stage('Build'){ 
-            environment{
-               x=readFile('hi.txt')
-                          }
+
         when {
            expression{ fileExists 'hi.txt' }
         }
           environment {
       ARTIFACTORY_BUILD_LOGIN = credentials("shivs_creds")
+      x=readFile('hi.txt')
         }
         steps{
            dir('shiva'){

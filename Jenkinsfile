@@ -20,7 +20,7 @@ pipeline{
                     echo 'this is a polling build'
                     sh 'pwd'
               environment{
-                    x = readFile('hi.txt')
+                    name: 'x',value: readFile('hi.txt')
               }
               echo "${env.x}"
                             }

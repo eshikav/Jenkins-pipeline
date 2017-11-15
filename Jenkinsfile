@@ -2,12 +2,14 @@ pipeline{
    agent any
    stages{
        stage('Build'){
-          withCredentials([UsernamePasswordMultiBinding(credentialsId: shivs_creds,usernameVariable: USERNAME,passwordVariable: PASSWORD)])
+          
           steps{
+                 withCredentials([UsernamePasswordMultiBinding(credentialsId: shivs_creds,usernameVariable: USERNAME,passwordVariable: PASSWORD)]){
                  echo $env.USERNAME
                  sh 'uname -r'
                  echo 'this is a polling build'
                 }
+          }
        }
        stage('Test'){
           steps{

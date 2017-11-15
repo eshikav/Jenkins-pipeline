@@ -2,6 +2,8 @@ pipeline{
    agent { label 'Centos' }
    stages{
        stage('Build'){
+          if ( fileExists 'hi.txt' )
+          {
                 environment {
       ARTIFACTORY_BUILD_LOGIN = credentials("shivs_creds")
         }
@@ -23,6 +25,7 @@ pipeline{
                  sh 'pwd'
                  sh 'sleep 10'
           }
+       }
                 }
     }
 }

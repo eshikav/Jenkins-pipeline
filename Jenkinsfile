@@ -4,8 +4,8 @@ pipeline{
        stage('Build'){
           when {
              fileExists('hi.txt')
-          {
-                environment {
+          }
+          environment {
       ARTIFACTORY_BUILD_LOGIN = credentials("shivs_creds")
         }
         
@@ -18,15 +18,4 @@ pipeline{
                     echo 'this is a polling build'
                 }
           }
-       }
-       stage('Test'){
-          steps{
-                 echo 'hello this is test task'
-                 sh 'uname -a'
-                 sh 'pwd'
-                 sh 'sleep 10'
-          }
-       }
-                }
     }
-}

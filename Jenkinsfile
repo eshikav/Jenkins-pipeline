@@ -2,6 +2,9 @@ pipeline{
    agent { label 'Centos' }
    stages{
        stage('Build'){ 
+            environment{
+               x=readFile('hi.txt)
+                          }
         when {
            expression{ fileExists 'hi.txt' }
         }
@@ -19,9 +22,7 @@ pipeline{
                     sh 'uname -r'
                     echo 'this is a polling build'
                     sh 'pwd'
-              environment{
-                    name: 'x',value: readFile('hi.txt')
-              }
+
               echo "${env.x}"
                             }
                        }

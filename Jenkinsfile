@@ -8,8 +8,8 @@ pipeline{
         }
           environment {
       ARTIFACTORY_BUILD_LOGIN = credentials("shivs_creds")
-      x = readFile('hi.txt')
-      y = pwd tmp: 'true'
+      x = readFile hi.txt
+      y = pwd tmp: true
              }
         steps{
            dir('shiva'){

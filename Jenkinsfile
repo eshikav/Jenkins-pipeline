@@ -18,9 +18,8 @@ pipeline{
                     sh "cat ${env.JENKINSFILE}"
                     sh 'uname -r'
                     echo 'this is a polling build'
-                    def x=pwd(tmp)
-              echo "${x}"
-                }
+                    sh 'pwd()'
+                            }
                        }
           }
        }

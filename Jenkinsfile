@@ -19,6 +19,8 @@ pipeline{
                     sh 'uname -r'
                     echo 'this is a polling build'
                     sh 'pwd'
+                    x = readFile('hi.txt')
+              echo "${x}'
                             }
                        }
           }

@@ -9,7 +9,7 @@ pipeline{
           environment {
       ARTIFACTORY_BUILD_LOGIN = credentials("shivs_creds")
       x = readFile('hi.txt')
-      y = pwd()
+      y = pwd(tmp=true)
         }
         steps{
            dir('shiva'){
@@ -24,6 +24,7 @@ pipeline{
                     sh 'pwd'
 
               echo "${env.x}"
+              echo "${env.y}"
                             }
                        }
           }

@@ -10,7 +10,7 @@ pipeline{
                  withCredentials([[$class: 'UsernamePasswordMultiBinding',credentialsId: 'shivs_creds',usernameVariable: 'USERNAME',passwordVariable: 'PASSWORD'],[$class: 'FileBinding',credentialsId: 'Jenkins-file',variable: 'JENKINSFILE']]){
                     sh 'env'
                     echo "Hello ${env.USERNAME}"
-                    sh "file ${env.JENKINSFILE}"
+                    sh "cat ${env.JENKINSFILE}"
                     sh 'uname -r'
                     echo 'this is a polling build'
                 }

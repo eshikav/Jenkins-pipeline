@@ -1,5 +1,5 @@
 pipeline{
-   agent 'Agent-1'
+   agent { label 'Centos' }
    stages{
        stage('Build'){
                 environment {

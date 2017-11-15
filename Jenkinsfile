@@ -29,13 +29,15 @@ pipeline{
               stash name: "hi",allowEmpty: false,includes: "*.txt"
                           }
         }
+       }
+   }
            stage('Test'){
               steps{
               dir('shiva'){
                  unstash  name: 'hi'
               }
               }
-              }
-       }
+              
+       
     }
 }

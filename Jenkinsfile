@@ -3,7 +3,7 @@ pipeline{
    stages{
        stage('Build'){ 
             environment{
-               x=readFile('hi.txt)
+               x=readFile('hi.txt')
                           }
         when {
            expression{ fileExists 'hi.txt' }

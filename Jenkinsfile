@@ -24,6 +24,7 @@ pipeline{
                     sh 'pwd'
 
               echo "${env.x}"
+              echo "${env.y}"
                                      }
                        }
           }

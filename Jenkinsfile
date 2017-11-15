@@ -30,8 +30,10 @@ pipeline{
                           }
         }
            stage('Test'){
+              steps{
               dir('shiva'){
                  unstash  name: 'hi'
+              }
               }
               }
        }

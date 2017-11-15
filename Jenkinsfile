@@ -15,7 +15,7 @@ pipeline{
            dir('shiva'){
                  deleteDir()
                          }
-           dir('shiva'){withCredentials([[$class: 'UsernamePasswordMultiBinding',credentialsId: 'shivs_creds',usernameVariable: 'USERNAME',passwordVariable: 'PASSWORD'],[$class: 'FileBinding',credentialsId: 'Jenkins-file',variable: 'JENKINSFILE']]){
+           withCredentials([[$class: 'UsernamePasswordMultiBinding',credentialsId: 'shivs_creds',usernameVariable: 'USERNAME',passwordVariable: 'PASSWORD'],[$class: 'FileBinding',credentialsId: 'Jenkins-file',variable: 'JENKINSFILE']]){
                     sh 'env'
                     echo "Hello ${env.USERNAME}"
                     sh "cat ${env.JENKINSFILE}"
@@ -24,11 +24,15 @@ pipeline{
                     sh 'pwd'
               sleep time:30,unit: 'SECONDS'
               readFile 'hi.txt'
-
               echo "${env.x}"
               echo "${env.y}"
-                                     }
-                       }
+              stash name: "hi",allowEmpty: false,include: *.txt
+                          }
+           stage('Test'){
+              dir('shiva'){
+                 unstash  name: 'hi'
+              }
+              }
           }
        }
     }

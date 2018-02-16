@@ -5,6 +5,7 @@ stages{
      steps{
         echo "This is a build stage"
         sh 'uname -r'
+        sh 'uptime'
         sleep time:30,unit: 'SECONDS'
            }
   }
